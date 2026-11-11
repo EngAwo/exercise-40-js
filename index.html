@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Video Player</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="video-player">
+
+        <!-- Video Information -->
+        <div class="video-info">
+
+            <div class="video-screen">
+                <video id="video" playsinline preload="metadata"
+                    poster="https://placehold.co/800x450/222222/ffffff?text=Modern+Video+Player">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+
+            <h2 id="title">Video Title</h2>
+            <p id="description">Video Description</p>
+
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+
+            <div class="progress-bar" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <div class="time">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <!-- Main Controls -->
+        <div class="controls">
+
+            <button id="prev" class="control-btn" aria-label="Previous video">
+                <i class="fas fa-step-backward"></i>
+            </button>
+
+            <button id="play" class="control-btn play-btn" aria-label="Play">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="next" class="control-btn" aria-label="Next video">
+                <i class="fas fa-step-forward"></i>
+            </button>
+
+        </div>
+
+        <!-- Additional Controls -->
+        <div class="additional-controls">
+
+            <div class="volume-container">
+
+                <button id="mute" class="icon-btn" aria-label="Mute">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+
+                <input type="range" id="volume"
+                    min="0" max="1" step="0.1" value="1">
+
+            </div>
+
+            <div class="speed-container">
+
+                <i class="fas fa-tachometer-alt"></i>
+
+                <select id="speed">
+                    <option value="0.5">0.5x</option>
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+
+            </div>
+
+            <button id="fullscreen" class="icon-btn"
+                aria-label="Fullscreen">
+                <i class="fas fa-expand"></i>
+            </button>
+
+        </div>
+
+        <!-- Video Playlist -->
+        <div class="playlist-container">
+
+            <h3>
+                <i class="fas fa-list"></i>
+                Video Playlist
+            </h3>
+
+            <div id="playlist" class="playlist"></div>
+
+        </div>
+
+        <!-- Video Status -->
+        <p id="status" class="status" aria-live="polite"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
